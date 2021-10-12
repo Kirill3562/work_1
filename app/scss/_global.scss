@@ -1,0 +1,14 @@
+body,
+html{
+  height: 100%;
+  margin: 0;
+  display: inline-block;
+  @extend %roboto-400;
+}
+
+.container{
+  min-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
