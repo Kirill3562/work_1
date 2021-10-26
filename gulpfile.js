@@ -9,37 +9,37 @@ const browserSync     = require('browser-sync').create();
 const rename          = require('gulp-rename');
 const del             = require('del');
 const nunjucksRender  = require('gulp-nunjucks-render');
-// const svgSprite    = require('gulp-svg-sprite');
-// const replace      = require('gulp-replace');
-// const cheerio      = require('gulp-cheerio');
+const svgSprite       = require('gulp-svg-sprite');
+const replace         = require('gulp-replace');
+const cheerio         = require('gulp-cheerio');
 
 
 
-//===========================================//svgSprites
-// const svgSprites = () => {
-//   return src(['app/images/icons/**.svg'])
+// ===========================================//svgSprites
+const svgSprites = () => {
+  return src(['app/images/icons/**.svg'])
 
-//   .pipe(cheerio({
-//     run: function($) {
-//       $('[fill]').remooveAttr('fill');
-//       $('[stroke]').remooveAttr('stroke');
-//       $('[style]').remooveAttr('style');
-//     },
-//     parseerOptions: {xmlMode: true}
-//   }))
+  .pipe(cheerio({
+    run: function($) {
+      $('[fill]').removeAttr('fill');
+      $('[stroke]').removeAttr('stroke');
+      $('[style]').removeAttr('style');
+    },
+    parseerOptions: {xmlMode: true}
+  }))
 
-//   .pipe(replace('&gt;', '>'))
+  .pipe(replace('&gt;', '>'))
 
-//   .pipe(svgSprite({
-//     mode: {
-//       stack: {
-//         sprite: "../sprite.svg" //sprite file name
-//       }
-//     },
-//   }))
+  .pipe(svgSprite({
+    mode: {
+      stack: {
+        sprite: "../sprite.svg" //sprite file name
+      }
+    },
+  }))
 
-//   .pipe(dest('app/images'));
-// }
+  .pipe(dest('app/images'));
+}
 
 function browsersync() {
   browserSync.init({
@@ -115,11 +115,11 @@ function nunjucks() {
 }
 
 function watching() {
-  watch(['app/scss/**/*.scss'], styles);
+  watch(['app/**/*.scss'], styles);
   watch(['app/**/*.njk'], nunjucks);
   watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
   watch(['app/**/*.html',]).on('change', browserSync.reload);
-  // watch(['app/images/icons/**.svg'], svgSprites);
+  watch(['app/images/icons/**.svg'], svgSprites);
 }
 
 exports.styles = styles;
@@ -129,7 +129,7 @@ exports.watching = watching;
 exports.images = images;
 exports.cleanDist = cleanDist;
 exports.nunjucks = nunjucks;
-// exports.svgSprites = svgSprites;
+exports.svgSprites = svgSprites;
 exports.build = series(cleanDist, images, build);
 
-exports.default = parallel(nunjucks, styles, scripts, browsersync, images, watching);
+exports.default = parallel(svgSprites, nunjucks, styles, scripts, browsersync, images, watching);
