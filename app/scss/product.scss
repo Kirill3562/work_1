@@ -1,0 +1,10 @@
+@import 'reset';
+@import 'global';
+@import 'fonts';
+@import 'vars';
+
+@import '../../node_modules/slick-carousel/slick/slick.scss';
+
+@import '../components/_top-header/_top-header';
+@import '../components/_product/_product';
+@import '../components/_footer/_footer';

@@ -1,0 +1,75 @@
+.professions{
+  color: $black;
+
+  &__wrapper{
+    display: block;
+    width: 347px;
+  }
+
+  &__title{
+    text-align: left;
+    font-size: 64px;
+    line-height: 1.6;
+    @extend %poppins-600;
+    max-width: 545px;
+    margin-bottom: 100px;
+  }
+
+  &__items{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+  }
+
+}
+
+.professions-item{
+  padding: 30px;
+  border: 1px solid #E5E5E5;
+  border-radius: 10px;
+  transition: box-shadow .3s;
+  &:hover{
+    box-shadow: 6px 8px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  &:not(:last-child){
+    margin-right: 50px;
+  }
+
+  &__text{
+    @extend %poppins-300;
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 30px;
+    width: 255px;
+  }
+
+  &__info{
+    display: flex;
+    align-items: center;
+  }
+
+  &__img{
+    border-radius: 50%;
+    margin-right: 30px;
+  }
+
+  &__description{
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name{
+    @extend %poppins-600;
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  &__profession{
+    font-size: 18px;
+    line-height: 1.5;
+    color:#818181;
+    @extend %poppins-300;
+  }
+
+}

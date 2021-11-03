@@ -1,8 +1,31 @@
-// %quicksand-400{
-//   font-family: 'Quicksand', sans-serif;
-//   font-weight: 400;
-// }
+$black: #222222;
 
+%poppins-600{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+%poppins-500{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+%poppins-300{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+%btn{
+  background-color: #2E4DEC;
+    border: none;
+    color: #fff;
+    line-height: 1.5;
+    font-size: 18px;
+    padding: 12px 58px;
+    border-radius: 30px;
+    @extend %poppins-600;
+    transition: background-color .3s;
+}
 
 @function max($numbers...) {
   @return m#{a}x(#{$numbers});

@@ -1,0 +1,55 @@
+.top-header{
+  height: 110px;
+  background-color: #000;
+  color: #fff;
+  margin-bottom: 107px;
+
+  &__inner{
+    display: flex;
+    padding: 44px 0 38px;
+    justify-content: space-between;
+    align-items: center
+  }
+
+}
+
+.top-menu{
+
+  &__list{
+    @extend %poppins-500;
+    display: flex;
+  }
+
+  &__item:not(:last-child){
+    margin-right: 100px;
+  }
+
+  &__link{
+    text-transform: uppercase;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 1.5;
+      transition: color .3s;
+      &:hover{
+        color: #1ABC9C;
+      }
+  }
+
+}
+
+.logo{
+  fill: #fff;
+  width: 75px;
+  height: 35px;
+}
+
+.search{
+  cursor: pointer;
+  fill: #fff;
+  width: 25px;
+  height: 25px;
+  transition: fill .3s;
+  &:hover{
+    fill: #1ABC9C;
+  }
+}

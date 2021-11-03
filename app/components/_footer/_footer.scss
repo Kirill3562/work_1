@@ -1,0 +1,105 @@
+.footer{
+  padding: 100px 0;
+  background-color: #000;
+  color: #fff;
+
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo{
+    width: 259px;
+  }
+
+  &__logo-link{
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo-text{
+    margin-left: 20px;
+    font-size: 26px;
+    line-height: 1.5;
+    @extend %poppins-600;
+    transition: color .3s;
+    &:hover{
+      color: #1ABC9C;
+    }
+  }
+
+  &__text{
+    @extend %poppins-300;
+    font-size: 18px;
+    line-height: 1.5;
+    opacity: 0.9;
+  }
+
+
+  &__list-title,
+  &__info-title,
+  &__contact-title{
+    @extend %poppins-600;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+
+  &__list-items{
+    opacity: 0.9;
+  }
+
+  &__list-item{
+    &:not(:last-child){
+      margin-bottom: 15px;
+    }
+  }
+
+  &__list-link{
+    @extend %poppins-300;
+    font-size: 18px;
+    line-height: 1.5;
+    transition: color .3s;
+    &:hover{
+      color: #1ABC9C;
+    }
+  }
+
+  &__info-items{
+    opacity: 0.9;
+  }
+
+  &__info-item{
+    &:not(:last-child){
+      margin-bottom: 15px;
+    }
+  }
+
+  &__info-link,
+  &__contact-phone,
+  &__contact-adress,
+  &__contact-email{
+    @extend %poppins-300;
+    font-size: 18px;
+    line-height: 1.5;
+    opacity: 0.9;
+    display: block;
+    transition: color .3s;
+    &:hover{
+      color: #1ABC9C;
+    }
+  }
+
+  &__contact-phone,
+  &__contact-adress{
+    margin-bottom: 15px;
+  }
+  
+  &__contact-adress__span{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: block;
+  }
+
+}
