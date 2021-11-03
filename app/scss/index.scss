@@ -3,5 +3,11 @@
 @import 'fonts';
 @import 'vars';
 
+@import '../../node_modules/slick-carousel/slick/slick.scss';
+
 @import '../components/_header/_header';
 @import '../components/_footer/_footer';
+@import '../components/_state-images/_state-images';
+@import '../components/_info/_info';
+@import '../components/_new-products/_new-products';
+@import '../components/_professions/_professions';
